@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,11 +6,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
-export class navbar extends Component {
-  render() {
+const Navbar1=(props)=> {
     return (
       <div>
-        <Navbar expand="lg" className="bg-body-tertiary " data-bs-theme="dark">
+        <Navbar expand="lg" className="bg-body-tertiary fixed-top " data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand><Link className="nav-link" to="/">News</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -44,7 +42,7 @@ export class navbar extends Component {
             className='pt-2 mx-3' // prettier-ignore
             type="switch"
             id="custom-switch"
-            onClick={this.props.toggleMode} // Call toggleMode function when clicked
+            onClick={props.toggleMode} // Call toggleMode function when clicked
           />
 
         </Navbar.Collapse>
@@ -52,7 +50,7 @@ export class navbar extends Component {
     </Navbar>
       </div>
     )
-  }
+  
 }
 
-export default navbar
+export default Navbar1
